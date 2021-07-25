@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Material+Icons&display=swap");
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+body {
+  font-family: 'El Messiri', sans-serif;
+  background-color: #f1f2f5;
+}
+
+ul {
+  list-style: none;
+}
+
+header {
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+  font-size: 1.4rem;
+  color: #361d32;
+}
+
+form input[type='submit'] {
+  background: inherit;
+  border: none;
+}
+
+header,
+.main {
+  max-width: 100%;
+  margin: 0 20px;
+}
+
+.main {
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
+  flex-direction: column;
+}
+
+.header-div {
+  align-content: center;
+  justify-content: space-between;
+}
+
+.refresh-div {
+  position: relative;
+}
+
+.pending-count {
+  position: absolute;
+  color: #fff;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: red;
+  z-index: 1;
+  top: -30%;
+  right: -30%;
+  font-size: 0.8rem;
+  padding: 2px;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+}
+
+.task-list {
+  flex-direction: column;
+}
+
+.task-container {
+  position: relative;
+}
+
+.checkbox,
+.delete-button {
+  flex: 0 1 0;
+}
+
+.editable {
+  flex: 2 1 0;
+  font-size: 1rem;
+  outline: none;
+}
+
+.editable:hover,
+.editable:focus {
+  background: #ffffbe;
+}
+
+.editable.complete {
+  text-decoration: line-through;
+  font-weight: 600;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-none {
+  display: none;
+}
+
+.task-list,
+.delete-button,
+.drag-button,
+input[type=text],
+input[type=button] {
+  background-color: inherit;
+  border: none;
+}
+
+input[type=text] {
+  outline: none;
+  flex: 1 1 0;
+  font-style: italic;
+  font-size: 1rem;
+}
+
+input[type=button] {
+  flex: 0 1 0;
+}
+
+.delete-button {
+  color: #b71c1c;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1000;
+}
+
+.delete-button:hover {
+  opacity: 0.8;
+  font-size: 1.6rem;
+}
+
+.drag-button {
+  padding: 0;
+  font-size: 1.3rem;
+  cursor: move;
+}
+
+.refresh-div,
+input[type=button],
+.drag-button,
+.clear-button {
+  opacity: 0.5;
+}
+
+.refresh-div,
+input[type=button],
+.clear-button {
+  cursor: pointer;
+}
+
+.clear-button {
+  border: none;
+  padding: 15px 0;
+  font-size: 1.05rem;
+}
+
+.draggable {
+  align-items: center;
+}
+
+.refresh-div:hover,
+input[type=button]:hover,
+.clear-button:hover,
+.drag-button:hover {
+  opacity: 1;
+}
+
+.header-div,
+.task-form,
+.draggable {
+  padding: 10px;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+footer {
+  position: absolute;
+  border-top: 1px solid #e3e3e3;
+  height: 50px;
+  padding: 10px 0;
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+small {
+  color: #361d32;
+}
+
+.draggable.dragging {
+  background-color: #eee;
+  border: 1px solid #333;
+}
+
+.alert {
+  position: relative;
+  font-weight: 500;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.alert-success {
+  background-color: #eceff1;
+  border: solid 1px green;
+  color: green;
+}
+
+.alert-danger {
+  background-color: #eceff1;
+  border: solid 1px #b71c1c;
+  color: #b71c1c;
+}
+
+.alert-close-btn {
+  position: absolute;
+  color: inherit;
+  background-color: inherit;
+  font-size: inherit;
+  border: none;
+  padding: 0 5px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.instructions {
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .main {
+    margin: 0 auto;
+    width: 35%;
+    padding: 0;
+  }
+
+  .alert {
+    max-width: 35%;
+  }
+
+  .instructions {
+    width: 35%;
+  }
+}
